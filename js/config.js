@@ -22,8 +22,8 @@ window.SITE = {
   wilayahLengkap: 'Desa Grabagan, Kec. Tulangan, Kab. Sidoarjo, Jawa Timur',
   instagram: '', // contoh: 'https://instagram.com/gading.rw09'
 
-  /* Peta: titik tengah Perumtas 3 (batas area ada di js/area.js) */
-  peta: { lat: -7.4471269, lng: 112.6290376, zoom: 16 },
+  /* Peta: titik logo GADING (lapangan/bangunan di sisi utara Perumtas 3). Batas area ada di js/area.js */
+  peta: { lat: -7.44540, lng: 112.62825, zoom: 16 },
 
   /* Kunci publik (anon), aman ditaruh di sini karena data dijaga RLS di supabase/schema.sql */
   supabaseUrl: 'https://otlgmtomcvpjkjlvpgeo.supabase.co',

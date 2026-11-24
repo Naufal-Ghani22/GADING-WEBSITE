@@ -25,7 +25,8 @@ window.SITE = {
   /* Peta: titik tengah Perumtas 3 (batas area ada di js/area.js) */
   peta: { lat: -7.4471269, lng: 112.6290376, zoom: 16 },
 
-  supabaseUrl: '',
-  supabaseAnonKey: '',
+  /* Kunci publik (anon), aman ditaruh di sini karena data dijaga RLS di supabase/schema.sql */
+  supabaseUrl: 'https://otlgmtomcvpjkjlvpgeo.supabase.co',
+  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im90bGdtdG9tY3ZwamtqbHZwZ2VvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU1MTc0ODYsImV4cCI6MjExMTA5MzQ4Nn0.1LPpbusEr_eI6Js_7FCRKZezM7D_usvXsPMbUAnBPH0',
   bucket: 'kegiatan',
 };

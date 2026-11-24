@@ -44,6 +44,8 @@ set search_path = ''
 as $$
   select exists (select 1 from public.admin_users where user_id = auth.uid());
 $$;
+revoke execute on function public.is_admin() from public, anon;
+grant execute on function public.is_admin() to authenticated;
 
 create or replace function public.set_updated_at()
 returns trigger
@@ -66,7 +68,13 @@ create trigger berita_updated
   before update on public.berita
   for each row execute function public.set_updated_at();
 
--- 3) Row Level Security --------------------------------------------
+-- 3) Hak akses Data API (project baru tidak memberi otomatis) ------
+grant usage on schema public to anon, authenticated;
+grant select on public.kegiatan, public.berita to anon, authenticated;
+grant insert, update, delete on public.kegiatan, public.berita to authenticated;
+grant select on public.admin_users to authenticated;
+
+-- 3b) Row Level Security -------------------------------------------
 alter table public.kegiatan    enable row level security;
 alter table public.berita      enable row level security;
 alter table public.admin_users enable row level security;

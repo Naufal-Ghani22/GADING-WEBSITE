@@ -3,3 +3,7 @@ node_modules/
 Thumbs.db
 *.log
 .vercel/
+
+# catatan pribadi, jangan ikut ke GitHub/Vercel
+PW*.txt
+*.secret.txt

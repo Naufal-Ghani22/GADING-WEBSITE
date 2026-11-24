@@ -1,60 +1,94 @@
-# Karang Taruna GADING | RW 09
+<div align="center">
 
-GADING = **Gerakan Muda Mudi Grabagan**, Perumtas 3, Grabagan, Tulangan, Sidoarjo. Slogan: **GADING GACOR DAR DER DOR**.
+<img src="assets/logo-256.png" width="104" alt="Logo GADING">
 
-Situs arsip kegiatan + berita. Publik melihat, admin menambah/mengubah/menghapus (tab Kegiatan | Berita).
+# Karang Taruna GADING
 
-## Struktur
+**Gerakan Muda Mudi Grabagan | RW 09**<br>
+Perumtas 3, Grabagan, Tulangan, Sidoarjo
 
-```
-index.html          Beranda (hero logo, tentang, daftar kegiatan per bulan)
-kegiatan.html       Detail kegiatan (?id=...), galeri + lightbox
-berita.html         Daftar berita, atau detail berita (?id=...)
-admin/              Panel admin (login, tambah/edit/hapus, unggah foto)
-js/config.js        <- SEMUA TEKS & PENGATURAN ada di sini
-js/store.js         Lapisan data (Supabase atau demo lokal), koleksi kegiatan + berita
-js/map.js           Peta Lokasi (Leaflet + OpenStreetMap, dibuat monokrom lewat CSS)
-js/area.js          Batas area Perumtas 3 dari OpenStreetMap
-supabase/schema.sql Skema database + keamanan (jalankan sekali)
-assets/             Logo (dipotong bulat dari GADING LOGO.png)
-```
+`GADING GACOR DAR DER DOR`
 
-## Menjalankan di komputer
+<img src="https://img.shields.io/badge/HTML-0a0a0a?style=flat-square&logo=html5&logoColor=white" alt="HTML">
+<img src="https://img.shields.io/badge/CSS-0a0a0a?style=flat-square&logo=css&logoColor=white" alt="CSS">
+<img src="https://img.shields.io/badge/JavaScript-0a0a0a?style=flat-square&logo=javascript&logoColor=white" alt="JavaScript">
+<img src="https://img.shields.io/badge/Supabase-0a0a0a?style=flat-square&logo=supabase&logoColor=white" alt="Supabase">
+<img src="https://img.shields.io/badge/Leaflet-0a0a0a?style=flat-square&logo=leaflet&logoColor=white" alt="Leaflet">
+<img src="https://img.shields.io/badge/Vercel-0a0a0a?style=flat-square&logo=vercel&logoColor=white" alt="Vercel">
 
-Butuh server lokal (bukan klik ganda file):
+</div>
 
-```
-python -m http.server 5520
-```
+<br>
 
-Buka http://127.0.0.1:5520
+<img src="docs/hero.webp" width="100%" alt="Hero: logo GADING di tengah lingkaran dengan cincin berputar dan partikel">
 
-## Mode demo vs online
+<br>
 
-- **Demo** (default, `supabaseUrl` kosong): data tersimpan di browser itu saja. Login admin: `admin@gading.id` / `gading09`. Ada 6 kegiatan contoh yang bisa dihapus.
-- **Online**: data tersimpan di Supabase, semua pengunjung melihat data yang sama.
+Website arsip kegiatan dan berita Karang Taruna GADING. Semua kegiatan sejak awal periode tercatat di sini, lengkap dengan cerita dan fotonya. Pengurus mengisinya sendiri lewat panel admin, dan warga cukup membuka situsnya dari HP.
 
-### Menyalakan mode online (gratis)
+## Sorotan
 
-1. Buat project di https://supabase.com
-2. SQL Editor -> tempel isi `supabase/schema.sql` -> Run.
-3. Authentication -> Users -> Add user (email + kata sandi admin, centang Auto Confirm).
-4. Daftarkan user itu sebagai admin (SQL Editor):
+| | |
+|---|---|
+| **Hero yang hidup** | Logo di tengah lingkaran: cincin dan teks melingkar yang berputar, partikel yang menghindari kursor, ledakan saat logo diketuk |
+| **Berita** | Kabar terbaru di beranda, satu berita bisa dijadikan sorotan |
+| **Arsip kegiatan** | Dikelompokkan per bulan, bisa difilter per tahun |
+| **Galeri foto** | Lightbox layar penuh, bisa digeser di HP |
+| **Peta wilayah** | Batas area Perumtas 3 di atas peta monokrom |
+| **Panel admin** | Tambah, ubah, hapus. Foto dikompres otomatis sebelum diunggah |
+
+## Tampilan
+
+<img src="docs/mobile.jpg" width="100%" alt="Tampilan di HP: hero, berita, kegiatan">
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/berita.jpg" alt="Berita"></td>
+    <td width="50%"><img src="docs/kegiatan.jpg" alt="Arsip kegiatan"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/detail.jpg" alt="Detail kegiatan"></td>
+    <td><img src="docs/lokasi.jpg" alt="Peta lokasi Perumtas 3"></td>
+  </tr>
+</table>
+
+### Panel admin
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/admin.jpg" alt="Daftar kegiatan di panel admin"></td>
+    <td width="50%"><img src="docs/admin-editor.jpg" alt="Form edit kegiatan"></td>
+  </tr>
+</table>
+
+<sub>Screenshot memakai data contoh.</sub>
+
+## Dibangun dengan
+
+- **HTML, CSS, JavaScript** murni, tanpa framework dan tanpa proses build
+- **Supabase** untuk database, login admin, dan penyimpanan foto, dijaga Row Level Security
+- **Leaflet + OpenStreetMap** untuk peta
+- **Vercel** untuk hosting
+
+<details>
+<summary>Menjalankan sendiri</summary>
+
+<br>
+
+1. Jalankan server lokal di folder ini: `python -m http.server 5520`, lalu buka http://127.0.0.1:5520
+2. Buat project Supabase, jalankan `supabase/schema.sql` di SQL Editor, lalu isi URL dan anon key di `js/config.js`
+3. Buat user di Authentication, lalu daftarkan sebagai admin:
    ```sql
    insert into public.admin_users (user_id)
    select id from auth.users where email = 'email-admin@contoh.com';
    ```
-5. Authentication -> Sign In / Providers -> matikan "Allow new users to sign up" (opsional, keamanan tetap dijaga tabel admin_users).
-6. Project Settings -> API: salin **Project URL** dan **anon public key** ke `js/config.js`.
 
-## Online-kan situsnya
+Teks situs (nama, slogan, periode, alamat) semuanya ada di `js/config.js`.
 
-Situs ini statis, jadi bisa di-hosting gratis di Vercel, Netlify, atau GitHub Pages. Unggah seluruh folder ini apa adanya, tidak perlu build.
+</details>
 
-## Catatan
+<br>
 
-- Foto dikompres otomatis di browser (maks 1600 px, WebP) sebelum diunggah. Maksimal 20 foto per kegiatan, foto pertama jadi sampul.
-- Kegiatan tanpa foto otomatis mendapat sampul tipografis (tanggal besar).
-- Foto di daftar tampil hitam putih, berwarna saat disentuh/hover.
-- Berita: centang "Jadikan sorotan" agar tampil paling besar di beranda. Bagian Berita otomatis tersembunyi bila belum ada berita.
-- Peta tidak bisa digeser satu jari di HP (agar scroll halaman tidak terganggu); pakai tombol +/- atau cubit dua jari.
+<div align="center">
+<sub>Dibuat untuk muda mudi Grabagan RW 09 | Data peta © OpenStreetMap contributors</sub>
+</div>

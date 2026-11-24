@@ -2,3 +2,4 @@ PW*.txt
 *.secret.txt
 README.md
 supabase/
+docs/

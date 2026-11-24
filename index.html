@@ -1,34 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GADING INFORMATION</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Karang Taruna GADING | Gerakan Muda Mudi Grabagan RW 09</title>
+  <meta name="description" content="Karang Taruna GADING (Gerakan Muda Mudi Grabagan) RW 09, Perumtas 3, Grabagan, Tulangan. Berita dan catatan kegiatan dari awal periode sampai hari ini.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="navbar-in">
-            <img src="" alt="Gading Logo">
-            <div class="navbar-text-1">
-                <h3>GADING</h3>
-            </div>
-            <div class="navbar-text-2">
-                <a href="#" class="navbar-text-in">Profile</a>
-                <a href="#" class="navbar-text-in">Structure</a>
-                <a href="#" class="navbar-text-in">Schedule</a>
-                <a href="#" class="navbar-text-in">Activities</a>
-            </div>
-        </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <canvas class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-words" aria-hidden="true">
+      <div class="word-row" style="--d:6"><div class="word-track" style="--dur:46s"><span>KARANG TARUNA</span><span>KARANG TARUNA</span></div></div>
+      <div class="word-row is-fill" style="--d:10"><div class="word-track is-rev" style="--dur:38s"><span>GADING GACOR</span><span>GADING GACOR</span></div></div>
+      <div class="word-row" style="--d:4"><div class="word-track" style="--dur:52s"><span>DAR DER DOR</span><span>DAR DER DOR</span></div></div>
     </div>
 
-    <div class="header">
-        <div class="header-in">
-            <p>halo</p>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="nav-brand" href="#top">
+        <img src="assets/logo-256.png" alt="" width="34" height="34">
+        <span>GADING</span>
+      </a>
+      <div class="nav-links">
+        <a href="#berita" id="navBerita" hidden>Berita</a>
+        <a href="#kegiatan">Kegiatan</a>
+        <a href="#lokasi">Lokasi</a>
+      </div>
+    </nav>
+
+    <div class="hero-center">
+      <div class="emblem" id="emblem">
+        <div class="pl" style="--d:26"><div class="ripple"></div><div class="ripple" style="animation-delay:-1.4s"></div><div class="ripple" style="animation-delay:-2.8s"></div></div>
+        <div class="pl" style="--d:22"><div class="ring ring-outer"></div></div>
+        <div class="pl" style="--d:18"><div class="ring ring-dash"></div></div>
+        <div class="pl" style="--d:16"><div class="orbit" style="--o:112%;--t:26s"><i></i></div></div>
+        <div class="pl" style="--d:14"><svg class="ring ring-text" viewBox="0 0 400 400" aria-hidden="true">
+          <defs><path id="circ" d="M200,200 m-176,0 a176,176 0 1,1 352,0 a176,176 0 1,1 -352,0"/></defs>
+          <text><textPath href="#circ" textLength="1100" lengthAdjust="spacing" id="ringText">GADING GACOR DAR DER DOR | GERAKAN MUDA MUDI GRABAGAN | RW 09 |</textPath></text>
+        </svg></div>
+        <div class="pl" style="--d:12"><div class="orbit orbit-rev" style="--o:96%;--t:18s"><i></i><i class="b"></i></div></div>
+        <div class="pl" style="--d:10"><svg class="ring ring-ticks" id="ticks" viewBox="0 0 400 400" aria-hidden="true"></svg></div>
+        <div class="pl" style="--d:8"><div class="sweep"></div></div>
+        <div class="pl" style="--d:6"><div class="orbit" style="--o:72%;--t:11s"><i class="s"></i></div></div>
+        <div class="pl" style="--d:2">
+          <button class="logo-disc" id="logoDisc" type="button" aria-label="Logo GADING, ketuk untuk efek">
+            <img src="assets/logo.webp" alt="Logo GADING RW 09" width="1024" height="1024">
+            <span class="logo-shine" aria-hidden="true"></span>
+          </button>
         </div>
+      </div>
+
+      <p class="hero-kicker" data-site="kepanjangan"></p>
+      <h1 class="hero-title">Karang Taruna <em>Gading</em></h1>
+      <p class="hero-sub" data-site="tagline"></p>
+      <a class="btn btn-light" href="#kegiatan">Lihat kegiatan
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v10m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
+
+    <div class="hud hud-bl"><span data-site="wilayah"></span> | <span>Periode <span data-site="periode"></span></span></div>
+    <div class="hud hud-br"><span id="clock">--:--:--</span> WIB</div>
+    <div class="hud hud-tl-count" id="hudCount"></div>
+  </header>
+
+  <!-- ============ SOLASI (pita berjalan) ============ -->
+  <div class="tapes" aria-hidden="true">
+    <div class="tape tape-a"><div class="tape-track" id="tapeA"></div></div>
+    <div class="tape tape-b"><div class="tape-track is-rev" id="tapeB"></div></div>
+  </div>
+
+  <main>
+    <!-- ============ BERITA ============ -->
+    <section class="news" id="berita" hidden>
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Kabar terbaru</p>
+            <h2>Berita</h2>
+          </div>
+          <a class="link-more" id="newsAll" href="berita.html" hidden>Semua berita <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="news-grid" id="newsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ TENTANG ============ -->
+    <section class="about" id="tentang">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Tentang kami</p>
+        <h2 class="about-lead" data-reveal data-site="tentang"></h2>
+        <p class="about-body" data-reveal data-site="tentangDetail"></p>
+
+        <div class="stats" data-reveal>
+          <div class="stat"><strong data-count="kegiatan">0</strong><span>Kegiatan</span></div>
+          <div class="stat"><strong data-count="foto">0</strong><span>Foto</span></div>
+          <div class="stat"><strong data-count="bulan">0</strong><span>Bulan berjalan</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KEGIATAN ============ -->
+    <section class="activities" id="kegiatan">
+      <div class="wrap">
+        <div class="act-head">
+          <div>
+            <p class="eyebrow">Arsip</p>
+            <h2>Kegiatan</h2>
+          </div>
+          <div class="act-tools">
+            <div class="chips" id="yearChips" role="tablist" aria-label="Filter tahun"></div>
+            <button class="sort-btn" id="sortBtn" type="button" aria-label="Ubah urutan">Terbaru</button>
+          </div>
+        </div>
+
+        <div id="feed" class="feed" aria-live="polite">
+          <div class="month">
+            <div class="month-label"><span class="sk sk-line" style="width:120px"></span></div>
+            <div class="cards">
+              <div class="card is-skel"><div class="card-img sk"></div><span class="sk sk-line"></span><span class="sk sk-line short"></span></div>
+              <div class="card is-skel"><div class="card-img sk"></div><span class="sk sk-line"></span><span class="sk sk-line short"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOKASI ============ -->
+    <section class="place" id="lokasi">
+      <div class="wrap place-in">
+        <div class="place-text">
+          <p class="eyebrow">Lokasi</p>
+          <h2>Perumtas&nbsp;3<br>Grabagan</h2>
+          <p class="place-sub" data-site="wilayahLengkap"></p>
+          <div class="place-actions">
+            <a class="btn btn-light" id="mapsOpen" href="#" target="_blank" rel="noopener">Buka di Google Maps</a>
+            <a class="btn btn-outline" id="mapsDir" href="#" target="_blank" rel="noopener">Petunjuk arah</a>
+          </div>
+        </div>
+        <div class="map-card">
+          <div class="map" id="map" role="region" aria-label="Peta area Perumtas 3, Grabagan, Tulangan"></div>
+          <div class="map-tag"><span data-site="wilayah"></span> | Perumtas 3</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <div class="footer-brand">
+        <img src="assets/logo-256.png" alt="" width="56" height="56">
+        <div>
+          <strong data-site="nama"></strong>
+          <span><span data-site="kepanjangan"></span> <span data-site="wilayah"></span></span>
+          <span data-site="alamat"></span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a id="igLink" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+        <a href="admin/">Masuk admin</a>
+      </div>
+    </div>
+    <div class="wrap footer-slogan" data-site="slogan"></div>
+    <div class="wrap footer-base">
+      <span>© <span id="year"></span> <span data-site="nama"></span></span>
+      <a href="#top">Kembali ke atas</a>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/area.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/map.js"></script>
 </body>
 </html>

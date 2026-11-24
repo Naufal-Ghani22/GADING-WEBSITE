@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Berita | Karang Taruna GADING</title>
+  <meta name="theme-color" content="#f2f2ef">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-detail">
+
+  <nav class="topbar">
+    <div class="wrap topbar-in">
+      <a class="back" id="backLink" href="index.html#berita">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 4 6 9l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="backText">Beranda</span>
+      </a>
+      <a class="topbar-brand" href="index.html" aria-label="Beranda">
+        <img src="assets/logo-256.png" alt="" width="36" height="36">
+      </a>
+    </div>
+  </nav>
+
+  <main id="root" class="detail">
+    <div class="wrap">
+      <span class="sk sk-line" style="width:180px"></span>
+      <span class="sk" style="height:64px;margin-top:20px;width:70%"></span>
+      <div class="sk" style="aspect-ratio:16/9;margin-top:36px;border-radius:20px"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-in">
+      <div class="footer-brand">
+        <img src="assets/logo-256.png" alt="" width="56" height="56">
+        <div>
+          <strong data-site="nama"></strong>
+          <span><span data-site="kepanjangan"></span> <span data-site="wilayah"></span></span>
+          <span data-site="alamat"></span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a id="igLink" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+        <a href="admin/">Masuk admin</a>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>© <span id="year"></span> <span data-site="nama"></span></span>
+      <a href="index.html">Beranda</a>
+    </div>
+  </footer>
+
+  <div class="lightbox is-single" id="lightbox" hidden>
+    <button class="lb-btn lb-close" type="button" aria-label="Tutup">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 5l12 12M17 5 5 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <img class="lb-img" alt="">
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/berita.js"></script>
+</body>
+</html>
